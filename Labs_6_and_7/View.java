@@ -1,12 +1,18 @@
 //11-9: Tyler Ballance, Vincent Beardsley, Suryanash Gupta, Brandon Raffa
+package orc;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.AbstractAction;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import java.awt.Graphics;
+import java.awt.event.ActionListener;
+
 import javax.swing.JPanel;
 import java.awt.Dimension;
 
@@ -30,6 +36,9 @@ public class View{
 	private final int drawDelay = 30;
 	private JFrame frame;
 	private ViewHelper helper;
+	private JButton button;
+	
+	
 	
 	//Initializes properties and builds frame object to view animation
 	public View(){
@@ -43,6 +52,11 @@ public class View{
 		frame.setSize(frameStartSize, frameStartSize);
 		frame.setVisible(true);
 		frame.pack();
+		button = new JButton("Play/Pause");
+		frame.getContentPane().add(BorderLayout.NORTH, button);
+		
+		
+		
 	}
 	
 	public static void main(String[] args) {
@@ -100,7 +114,7 @@ public class View{
 	private BufferedImage createImage(String file){
 		BufferedImage bufferedImage;
 		try {
-			String path = "images/orc/";
+			String path = "src/images/orc/";
 			path += file;
 			bufferedImage = ImageIO.read(new File(path));
 			return bufferedImage;
@@ -109,6 +123,12 @@ public class View{
 		}
 		return null;
 	}
+	
+	void addControllerToMyButton(Controller c) {
+		button.addActionListener(c);
+	}
+	
+	
 
 	private class ViewHelper extends JPanel{
 		private int picNum = 0;
