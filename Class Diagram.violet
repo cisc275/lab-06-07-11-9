@@ -483,7 +483,7 @@
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double14"/>
-      <double>690.0</double>
+      <double>630.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
@@ -494,7 +494,7 @@
      </void>
     </void>
     <void method="setLocation">
-     <double>690.0</double>
+     <double>630.0</double>
      <double>30.0</double>
     </void>
    </object>
@@ -527,7 +527,7 @@
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double15"/>
-      <double>710.0</double>
+      <double>650.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
@@ -538,7 +538,7 @@
      </void>
     </void>
     <void method="setLocation">
-     <double>710.0</double>
+     <double>650.0</double>
      <double>180.0</double>
     </void>
    </object>
@@ -667,23 +667,23 @@
    <object class="com.horstmann.violet.ClassNode" id="ClassNode18">
     <void property="attributes">
      <void property="text">
-      <string>images: BufferedImage[ ]
-imageNum: int
-picNum: int
-frameCount: int
-frameWidth: int
-frameHeight: int
-imgWidth: int
-imgHeight: int
-frame: JFrame
-helper: ViewHelper</string>
+      <string>-images: BufferedImage[ ]
+-imageNum: int
+-picNum: int
+-frameCount: int
+-frameWidth: int
+-frameHeight: int
+-imgWidth: int
+-imgHeight: int
+-frame: JFrame
+-helper: ViewHelper</string>
      </void>
     </void>
     <void property="methods">
      <void property="text">
-      <string>createImage(): void
-buildImages(): void
-update(): void</string>
+      <string>-createImage(): void
+-buildImages(): void
++update(): void</string>
      </void>
     </void>
     <void property="name">
@@ -697,7 +697,7 @@ update(): void</string>
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double19"/>
-      <double>710.0</double>
+      <double>650.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
@@ -708,7 +708,7 @@ update(): void</string>
      </void>
     </void>
     <void method="setLocation">
-     <double>710.0</double>
+     <double>650.0</double>
      <double>370.0</double>
     </void>
    </object>
@@ -717,15 +717,15 @@ update(): void</string>
    <object class="com.horstmann.violet.ClassNode" id="ClassNode19">
     <void property="attributes">
      <void property="text">
-      <string>xloc: int
-yloc: int
-direction: Direction</string>
+      <string>-xloc: int
+-yloc: int
+-direction: Direction</string>
      </void>
     </void>
     <void property="methods">
      <void property="text">
-      <string>paint(): void
-updateImage(): void</string>
+      <string>+paint(): void
++updateImage(): void</string>
      </void>
     </void>
     <void property="name">
@@ -739,7 +739,7 @@ updateImage(): void</string>
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double20"/>
-      <double>720.0</double>
+      <double>660.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
@@ -750,7 +750,7 @@ updateImage(): void</string>
      </void>
     </void>
     <void method="setLocation">
-     <double>720.0</double>
+     <double>660.0</double>
      <double>660.0</double>
     </void>
    </object>
