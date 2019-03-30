@@ -23,39 +23,53 @@ public class Model{
 	private final int frameHeight;
 	private final int imgWidth;
 	private final int imgHeight;
+
 	//Initializes properties
 	public Model(int width, int height, int imageWidth, int imageHeight) {
-		xloc = 100;
+		xloc = 0;
 		yloc = 100;
-		xIncr = 1;
-		yIncr = 1;
+		xIncr = 5;
+		yIncr = 5;
 		updateDirection();
 		frameWidth = width;
 		frameHeight = height;
 		imgWidth = imageWidth;
 		imgHeight = imageHeight;
 	}
+
 	//Returns x coordinate
 	public int getX() { return xloc; }
-	
+
 	//Returns y coordinate
 	public int getY() { return yloc; }
-	
+
 	//Returns direction of movement
 	public Direction getDirect() { return direction; }
-	
+
+	//Returns x velocity
+	public int getXIncr() { return xIncr; }
+
+	//Returns y velocity
+	public int getYIncr() { return yIncr; }
+
+	//Sets x velocity
+	public void setXIncr(int newIncr) { xIncr = newIncr; }
+
+	//Sets y velocity
+	public void setYIncr(int newIncr) { yIncr = newIncr; }
+
 	//Checks if boundary collision occurs and adjusts position
 	public void updateLocationAndDirection() {
 		//Checks if boundary collisions occur and if so then changes the direction based on which wall was collided into
-		if((xloc >= frameWidth - imgWidth) || (xloc <= 0)) { 
+		if((xloc > frameWidth - imgWidth) || (xloc < 0)) { 
 			xIncr *= -1; updateDirection(); }
-		if((yloc >= frameHeight - imgHeight) || (yloc <= 0)) { 
+		if((yloc > frameHeight - imgHeight) || (yloc < 0)) { 
 			yIncr *= -1; updateDirection(); }
 		//Increments the position by values of respective velocities
 		xloc += xIncr;
 		yloc += yIncr;
 	}
-	
+
 	//Updates direction based on x and y velocities
 	private void updateDirection() {
 		if(xIncr > 0) {

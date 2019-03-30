@@ -10,15 +10,11 @@ public enum Direction {
 	SOUTHWEST("southwest"),
 	WEST("west"),
 	NORTHWEST("northwest");
-	
-	private String name = null;
-	
-	private Direction(String s){
-		name = s;
-	}
-	public String getName() {
-		return name;
-	}
 
+	private String name = null;
+
+	private Direction(String s){ name = s; }
+
+	public String getName() { return name; }
 
 }
