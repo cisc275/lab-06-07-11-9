@@ -1,4 +1,4 @@
-package orc;
+package Lab02;
 
 public enum Direction {
 

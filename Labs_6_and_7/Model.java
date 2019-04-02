@@ -1,4 +1,4 @@
-//11-9: Tyler Ballance, Vincent Beardsley, Suryanash Gupta, Brandon Raffa
+//11-9: Tyler Ballance, Vincent Beardsley, Suryansh Gupta, Brandon Raffa
 
 /**
  * Model: Contains all the state and logic
@@ -10,7 +10,7 @@
  * provide direction
  * provide location
  **/
-package orc;
+package Lab02;
 
 public class Model{
 

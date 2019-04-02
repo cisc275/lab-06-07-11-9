@@ -1,5 +1,5 @@
 //11-9: Tyler Ballance, Vincent Beardsley, Suryanash Gupta, Brandon Raffa
-package orc;
+package Lab02;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -68,6 +68,23 @@ public class Controller implements ActionListener, KeyListener {
 						}
 					},
 					view.getDelay() * 4
+					);
+		}
+		if(e.getKeyCode() == KeyEvent.VK_J) {
+			if(model.getXIncr() != 0) { xVel = model.getXIncr(); }
+			if(model.getYIncr() != 0) { yVel = model.getYIncr(); }
+			model.setXIncr(0);
+			model.setYIncr(0);
+			view.jump();
+			new java.util.Timer().schedule(
+					new java.util.TimerTask() {
+						public void run() {
+							model.setXIncr(xVel);
+							model.setYIncr(yVel);
+							view.land();
+						}
+					},
+					view.getDelay() * 8
 					);
 		}
 	}

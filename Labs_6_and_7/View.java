@@ -1,5 +1,5 @@
-//11-9: Tyler Ballance, Vincent Beardsley, Suryanash Gupta, Brandon Raffa
-package orc;
+//11-9: Tyler Ballance, Vincent Beardsley, Suryansh Gupta, Brandon Raffa
+package Lab02;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -37,6 +37,7 @@ public class View{
 	private ViewHelper helper;
 	private JButton button;
 	private boolean isFiring;
+	private boolean isJumping;
 
 	//Initializes properties and builds frame object to view animation
 	public View(){
@@ -86,10 +87,24 @@ public class View{
 	public void fire() { 
 		isFiring = true;
 		picNum = frameCount2 * imageNum + 82;
+		System.out.println("Called view.fire");
 	}
 
 	//Ends firing animation
 	public void holster() { isFiring = false; }
+	
+	
+	
+	//starts jumping animation
+	public void jump() {
+		isJumping = true;
+		picNum=frameCount3 * imageNum + 112;
+	}
+	//ends jumping animation
+	public void land() {
+		isJumping=false;
+	}
+	
 
 	//Cuts image source files into animation frames
 	private void buildPics(){
@@ -186,6 +201,7 @@ public class View{
 			g.setColor(Color.gray);
 			//Sets which animation frame to display by incrementing from past frame or changing to new image set if needed
 			if(isFiring) { picNum = ((picNum + 1) % frameCount2) + (frameCount2 * imageNum + 80); }
+			else if(isJumping) { picNum = ((picNum + 1) % frameCount3) + (frameCount3 * imageNum + 112); }
 			else { picNum = ((picNum + 1) % frameCount1) + (frameCount1 * imageNum); }
 			//Checks if imageNum should be updated so that the animation frames can be chosen from a new image set, i.e. changes graphical direction of orc
 			updateImage();
